@@ -16,3 +16,19 @@ export const parseExchangeRates = (data: string): CurrencyType[] => {
       };
     });
 };
+
+export const calcualteRate = ({
+  amountInCzk,
+  selectedCurrency,
+  currencies,
+}: {
+  amountInCzk: number;
+  selectedCurrency: string;
+  currencies: CurrencyType[];
+}) => {
+  const rate = currencies.find((currency) => currency.code === selectedCurrency)?.rate || 1;
+  const amountForCurrency =
+    currencies.find((currency) => currency.code === selectedCurrency)?.amount || 1;
+
+  return (amountInCzk / rate) * amountForCurrency;
+};

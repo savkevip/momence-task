@@ -48,10 +48,10 @@ const CurrencyItem = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.text};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
   font-size: 16px;
   font-weight: 500;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.primary};
 
   &:last-child {
     border-bottom: none;

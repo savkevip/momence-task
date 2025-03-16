@@ -14,9 +14,11 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.68.0",
+    "formik": "^2.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "styled-components": "^6.1.15"
+    "styled-components": "^6.1.15",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

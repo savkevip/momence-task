@@ -1,18 +1,23 @@
-import { Button } from "./components/ui/Button";
-import { Spinner } from "./components/ui/Spinner";
-import { Subtitle, Text, Title } from "./components/ui/Typography";
-import { Wrapper } from "./components/ui/Wrapper";
+import styled from "styled-components";
+
+import { CurrencyList } from "./components/CurrencyList";
+import { Title } from "./components/ui/Typography";
 import { useCurrencyRates } from "./hooks/useCurrencyRates";
 
 export const App = () => {
   const { data: currencies = [], isLoading } = useCurrencyRates();
 
   return (
-    <Wrapper>
-      <Title>Momence Task</Title>
-      <Button>Exchange Currency</Button>
-      <Subtitle>Some Subtitle</Subtitle>
-      {isLoading ? <Spinner /> : <Text $align="center">{JSON.stringify(currencies)}</Text>}
-    </Wrapper>
+    <Container>
+      <Title $align="center">Currency Exchange</Title>
+      <CurrencyList currencies={currencies} loading={isLoading} />
+    </Container>
   );
 };
+
+const Container = styled.div`
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+`;

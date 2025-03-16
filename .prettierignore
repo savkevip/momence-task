@@ -1,0 +1,12 @@
+dist
+node_modules
+.cache
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+*.config.js
+*.config.cjs
+*.config.mjs
+*.config.ts
+.eslintcache
+.vite

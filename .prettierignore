@@ -10,3 +10,4 @@ yarn.lock
 *.config.ts
 .eslintcache
 .vite
+netlify.toml

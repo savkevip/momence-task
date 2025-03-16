@@ -4,12 +4,11 @@ import { CurrencyType } from "../utils/types";
 
 import { Spinner } from "./ui/Spinner";
 
-import { Text, TextSecondary } from "./ui/Typography";
+import { Text, TextSecondary, Subtitle } from "./ui/Typography";
 import { Wrapper } from "./ui/Wrapper";
 
 type Props = {
   currencies: CurrencyType[];
-
   loading?: boolean;
 };
 
@@ -20,6 +19,10 @@ export const CurrencyList = ({ currencies, loading }: Props) => {
         <Loader data-testid="loader-wrapper">
           <Spinner />
         </Loader>
+      ) : currencies.length === 0 ? (
+        <Subtitle data-testid="no-data-message" $align="center">
+          No data
+        </Subtitle>
       ) : (
         currencies.map(({ country, code, rate }) => (
           <CurrencyItem key={code}>
